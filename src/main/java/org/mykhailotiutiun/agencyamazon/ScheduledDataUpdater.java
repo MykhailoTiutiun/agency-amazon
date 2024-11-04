@@ -13,7 +13,7 @@ public class ScheduledDataUpdater {
         this.reportsUpdater = reportsUpdater;
     }
 
-    @Scheduled(fixedRateString = "${report.update.rate}")
+    @Scheduled(cron = "${report.update.cron}")
     public void update(){
         reportsUpdater.update();
     }
