@@ -1,0 +1,15 @@
+jwt:
+  secret: da9565fdfdb6fc9b7f2aff34498c3e8cee1984092b4e3b4502a9fb9cee939552
+
+report:
+  update:
+    rate: 10000
+    file:
+      location: C:\Work\Projects\agency-amazon\test_report.json
+
+spring:
+  datasource:
+    url: mongodb://localhost:27017/app
+  data:
+    mongodb:
+      database: app
