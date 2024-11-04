@@ -1,6 +1,7 @@
 package org.mykhailotiutiun.agencyamazon.report.date;
 
 import java.io.Serializable;
+import java.util.Objects;
 
 public class DateTraffic implements Serializable {
     private Integer browserPageViews;
@@ -232,5 +233,18 @@ public class DateTraffic implements Serializable {
 
     public void setReceivedNegativeFeedbackRate(Double receivedNegativeFeedbackRate) {
         this.receivedNegativeFeedbackRate = receivedNegativeFeedbackRate;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        DateTraffic traffic = (DateTraffic) o;
+        return Objects.equals(browserPageViews, traffic.browserPageViews) && Objects.equals(browserPageViewsB2B, traffic.browserPageViewsB2B) && Objects.equals(mobileAppPageViews, traffic.mobileAppPageViews) && Objects.equals(mobileAppPageViewsB2B, traffic.mobileAppPageViewsB2B) && Objects.equals(pageViews, traffic.pageViews) && Objects.equals(pageViewsB2B, traffic.pageViewsB2B) && Objects.equals(browserSessions, traffic.browserSessions) && Objects.equals(browserSessionsB2B, traffic.browserSessionsB2B) && Objects.equals(mobileAppSessions, traffic.mobileAppSessions) && Objects.equals(mobileAppSessionsB2B, traffic.mobileAppSessionsB2B) && Objects.equals(sessions, traffic.sessions) && Objects.equals(sessionsB2B, traffic.sessionsB2B) && Objects.equals(buyBoxPercentage, traffic.buyBoxPercentage) && Objects.equals(buyBoxPercentageB2B, traffic.buyBoxPercentageB2B) && Objects.equals(orderItemSessionPercentage, traffic.orderItemSessionPercentage) && Objects.equals(orderItemSessionPercentageB2B, traffic.orderItemSessionPercentageB2B) && Objects.equals(unitSessionPercentage, traffic.unitSessionPercentage) && Objects.equals(unitSessionPercentageB2B, traffic.unitSessionPercentageB2B) && Objects.equals(averageOfferCount, traffic.averageOfferCount) && Objects.equals(averageParentItems, traffic.averageParentItems) && Objects.equals(feedbackReceived, traffic.feedbackReceived) && Objects.equals(negativeFeedbackReceived, traffic.negativeFeedbackReceived) && Objects.equals(receivedNegativeFeedbackRate, traffic.receivedNegativeFeedbackRate);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(browserPageViews, browserPageViewsB2B, mobileAppPageViews, mobileAppPageViewsB2B, pageViews, pageViewsB2B, browserSessions, browserSessionsB2B, mobileAppSessions, mobileAppSessionsB2B, sessions, sessionsB2B, buyBoxPercentage, buyBoxPercentageB2B, orderItemSessionPercentage, orderItemSessionPercentageB2B, unitSessionPercentage, unitSessionPercentageB2B, averageOfferCount, averageParentItems, feedbackReceived, negativeFeedbackReceived, receivedNegativeFeedbackRate);
     }
 }

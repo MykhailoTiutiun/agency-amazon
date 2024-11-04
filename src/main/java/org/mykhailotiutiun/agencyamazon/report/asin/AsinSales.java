@@ -3,6 +3,7 @@ package org.mykhailotiutiun.agencyamazon.report.asin;
 import org.mykhailotiutiun.agencyamazon.report.Price;
 
 import java.io.Serializable;
+import java.util.Objects;
 
 public class AsinSales implements Serializable {
 
@@ -67,4 +68,16 @@ public class AsinSales implements Serializable {
         this.totalOrderItemsB2B = totalOrderItemsB2B;
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        AsinSales sales = (AsinSales) o;
+        return Objects.equals(orderedProductSales, sales.orderedProductSales) && Objects.equals(orderedProductSalesB2B, sales.orderedProductSalesB2B) && Objects.equals(unitsOrdered, sales.unitsOrdered) && Objects.equals(unitsOrderedB2B, sales.unitsOrderedB2B) && Objects.equals(totalOrderItems, sales.totalOrderItems) && Objects.equals(totalOrderItemsB2B, sales.totalOrderItemsB2B);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(orderedProductSales, orderedProductSalesB2B, unitsOrdered, unitsOrderedB2B, totalOrderItems, totalOrderItemsB2B);
+    }
 }
