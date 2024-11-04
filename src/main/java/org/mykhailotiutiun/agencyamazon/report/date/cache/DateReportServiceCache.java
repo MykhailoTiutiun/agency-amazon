@@ -12,8 +12,7 @@ import org.springframework.stereotype.Service;
 import java.time.LocalDate;
 import java.util.List;
 
-@Primary
-@Service
+
 public class DateReportServiceCache implements DateReportService {
 
     private final DateReportService dateReportService;
@@ -35,7 +34,7 @@ public class DateReportServiceCache implements DateReportService {
     }
 
     @Override
-    @Cacheable("date_report")
+    @Cacheable(value = "date_report", unless = "#result.empty")
     public List<DateReport> getByDateBetween(LocalDate begin, LocalDate end) {
         return dateReportService.getByDateBetween(begin, end);
     }

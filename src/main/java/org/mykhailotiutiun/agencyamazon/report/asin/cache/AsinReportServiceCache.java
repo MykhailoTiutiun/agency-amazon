@@ -11,8 +11,6 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-@Primary
-@Service
 public class AsinReportServiceCache implements AsinReportService {
 
     private final AsinReportService asinReportService;
@@ -28,7 +26,7 @@ public class AsinReportServiceCache implements AsinReportService {
     }
 
     @Override
-    @Cacheable("date_report")
+    @Cacheable(value = "date_report", unless = "#result.empty")
     public List<AsinReport> getAllByAsinIn(List<String> asins) {
         return asinReportService.getAllByAsinIn(asins);
     }

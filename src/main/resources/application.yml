@@ -4,7 +4,7 @@ jwt:
 
 report:
   update:
-    cron: "* * * * * *"
+    cron: "0 * * * * *"
     file:
       location: C:\Work\Projects\agency-amazon\test_report.json
 
